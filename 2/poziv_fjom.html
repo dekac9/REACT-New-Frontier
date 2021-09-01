@@ -12,12 +12,18 @@
   <body>
     <div id="container"></div>
     <script type="text/babel">
-      function Input(props) {
-        console.log(props);
+      class Input extends React.Component {
+        render(){
+
         return (
-          <input type={props.tip} placeholder={props.children} />
+
+         <div>
+          <input type={this.props.tip} placeholder={this.props.children} />
+         </div> 
           
-        );
+        ); 
+        }
+        
       }
 
       var lokacija = document.getElementById("container");

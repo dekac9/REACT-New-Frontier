@@ -12,26 +12,48 @@
   <body>
     <div id="container"></div>
     <script type="text/babel">
-      class Input extends React.Component {
-        render(){
-
-        return (
-
-         <div>
-          <input type={this.props.tip} placeholder={this.props.children} />
-         </div> 
-          
-        ); 
+      class Display extends React.Component {
+        render() {
+          return (
+            <div>
+              <p>{this.props.velicina}</p>
+              <p>{this.props.broj}</p>
+              <p>{this.props.boja}</p>
+            </div>
+          );
         }
-        
+      }
+      class Label extends React.Component {
+        render() {
+          return (
+            <Display
+              // velicina={this.props.velicina}
+              // broj={this.props.broj}
+              // boja={this.props.boja}
+              {...this.props}
+            />
+          );
+        }
+      }
+      class Shirt extends React.Component {
+        render() {
+          return (
+            <div>
+              <Label
+                // velicina={this.props.velicina}
+                // broj={this.props.broj}
+                // boja={this.props.boja}
+                {...this.props}
+              />
+            </div>
+          );
+        }
       }
 
       var lokacija = document.getElementById("container");
       ReactDOM.render(
         <div>
-          <Input tip="text">Unesite prezime</Input>
-          <Input tip="text">Unesite ime</Input>
-
+          <Shirt velicina="XL" broj="32" boja="red" />
         </div>,
         lokacija
       );

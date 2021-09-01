@@ -13,25 +13,29 @@
 
     <script type="text/babel">
       class LightningCounter extends React.Component {
-        constructor(props) {
+          constructor(props){
           super(props);
-          this.state = {
-            brojac: 0,
+          this.state={ 
+            brojac: parseInt(props.pocetak),
           };
-          this.tajmerTick=this.tajmerTick.bind(this);
+          
+          this.kupus=this.tajmerTick.bind(this);
+
         }
-        tajmerTick() {
+
+        tajmerTick(){
           this.setState({
-            brojac: this.state.brojac + 1,
-          });
+            brojac:this.state.brojac+1
+          })
         }
-        componentDidMount() {
-          setInterval(this.tajmerTick, 10);
+
+        componentDidMount(){
+          setInterval(this.kupus,100);
         }
 
         render() {
-          let count = this.state.brojac;
-          return <h1>{count}</h1>;
+        let ispis = this.state.brojac;  
+        return <h1>{ispis}</h1>;
         }
       }
 
@@ -49,14 +53,20 @@
 
           return (
             <div style={divStyle}>
-              <LightningCounter />
+              <LightningCounter pocetak="0"/>
+              <LightningCounter pocetak="10"/>
+              <LightningCounter pocetak="100"/>
             </div>
           );
         }
       }
 
       ReactDOM.render(
-        <LightningCounterDisplay />,
+        <div>
+         <LightningCounterDisplay />
+        
+        </div>
+        ,
         document.querySelector("#container")
       );
     </script>

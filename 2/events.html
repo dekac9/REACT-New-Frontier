@@ -38,6 +38,35 @@
           this.state = {
             count: 0,
           };
+          this.kupus = this.povecaj.bind(this);
+          this.salata = this.smanji.bind(this);
+        }
+        povecaj(event) {
+          let promeni = this.state.count;
+
+          if (event.shiftKey) {
+            promeni = promeni + 10;
+          } else {
+            promeni++;
+          }
+
+          this.setState({ count: promeni });
+        }
+
+        smanji() {
+          let promeni = this.state.count;
+          promeni--;
+          this.setState({ count: promeni });
+        }
+
+        shouldComponentUpdate(newProps, newState) {
+          if (newState.count > 20) {
+            return false;
+            ReactDOM.unmountComponentAtNode(document.querySelector("#container"));
+            
+          } else {
+            return true;
+          }
         }
 
         render() {
@@ -62,8 +91,11 @@
           return (
             <div style={backgroundStyle}>
               <Counter display={this.state.count} />
-              <button style={buttonStyle}>
+              <button onClick={this.kupus} style={buttonStyle}>
                 +
+              </button>
+              <button onClick={this.salata} style={buttonStyle}>
+                -
               </button>
             </div>
           );
