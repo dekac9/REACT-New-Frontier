@@ -62,7 +62,7 @@
         shouldComponentUpdate(newProps, newState) {
           if (newState.count > 20) {
             return false;
-            ReactDOM.unmountComponentAtNode(document.querySelector("#container"));
+            ReactDOM.unmountComponentAtNode(ispis);
             
           } else {
             return true;
@@ -101,12 +101,13 @@
           );
         }
       }
-
+let ispis=document.getElementById("container")
       ReactDOM.render(
+        
         <div>
           <CounterParent />
-        </div>,
-        document.querySelector("#container")
+        </div>,ispis
+        
       );
     </script>
   </body>
