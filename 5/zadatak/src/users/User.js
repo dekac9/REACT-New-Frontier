@@ -3,7 +3,7 @@ import React from 'react';
 const User=(props)=>{
   return (
     <div>
-Ime:{props.ime} | Godine:{props.godine}
+Ime:{props.children} | Godine:{props.godine}
     </div>
   )
 }
