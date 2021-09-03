@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Forms extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", godine: null, errorMessage: "" };
+    this.state = { username: "", age: null, errorMessage: "" };
     this.promeni=this.promeni.bind(this);
   }
   promeni = (e) => {
@@ -15,14 +15,16 @@ class Forms extends Component {
       if (vrednost !== "" && !Number(vrednost)) {
         err = "Niste uneli ispravne podatke";
       }
-    this.setState({godine:vrednost});  
-    }else{
-    this.setState({username:vrednost});
+    //this.setState({godine:vrednost});  
     }
-    this.setState({errorMessage:err});
+    // else{
+    // this.setState({username:vrednost});
+    // }
+    // this.setState({errorMessage:err});
     
-    
- 
+    //OVO JE URADJENO AKO U STATEU PISE GODINE UMESTO AGE
+    this.setState({[name]:vrednost});
+    this.setState({errorMessage:err})
   };
 
   render() {
@@ -30,7 +32,7 @@ class Forms extends Component {
       <div>
         <form>
           <h1>
-            Dobar dan: {this.state.username}, imas {this.state.godine}
+            Dobar dan: {this.state.username}, imas {this.state.age}
           </h1>
           <p>
             Unesite username:
