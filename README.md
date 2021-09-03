@@ -5,3 +5,4 @@
 4 - React aplikacija (CV) od pocetka
 5 - zadatak (rad sa props i state)
 6 - zadatak (forme, provera input polja...)
+7 - TO-DO React
