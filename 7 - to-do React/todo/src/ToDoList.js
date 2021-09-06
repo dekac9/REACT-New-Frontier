@@ -9,9 +9,14 @@ class ToDoList extends Component {
       items: [],
     };
   }
-  let dodajUListu=()=>{
-
-  }
+  dodajUListu = () => {
+    let nizEl = this.state.items;
+    if (self._inputElement.value !== "") {
+      nizEl.unshift({ text: self._inputElement.value, vreme: Date.now() });
+      this.setState({items:nizEl})
+    }
+    self._inputElement.value="";
+  };
   render() {
     var self = this;
     return (
