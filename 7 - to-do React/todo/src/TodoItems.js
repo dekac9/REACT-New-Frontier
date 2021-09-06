@@ -18,9 +18,13 @@ class TodoItems extends Component {
   render() {
     let elementi=this.props.elementi;
     let listItems=elementi.map(this.kreirajTask);
+    const customEnterAnimation = {
+      from: { transform: 'scale(0.5, 1)' },
+      to:   { transform: 'scale(1, 1)' }
+    };
     return (
       <ul className="theList">
-        <FlipMove>
+        <FlipMove enterAnimation={customEnterAnimation}>
         {listItems}
         </FlipMove>
       </ul>
