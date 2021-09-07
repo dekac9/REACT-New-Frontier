@@ -7,3 +7,4 @@
 6 - zadatak (forme, provera input polja...)
 7 - TO-DO React (dodate animacije, prosledjivanje metoda kao props)
 8 - FETCH u Reactu (fetch ip adrese)
+9 - prvi domaci (1. danasnji datum u posebnoj komponenti; 2. vreme koje je ostalo do sledecih olimpijskih igara; 3. neki fetch u trecoj komponenti(fetch bilo cega, moze i vreme))
