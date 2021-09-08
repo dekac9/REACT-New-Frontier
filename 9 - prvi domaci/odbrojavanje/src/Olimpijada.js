@@ -8,6 +8,7 @@ class Olimpijada extends Component {
       preostale_minute: 0,
       preostali_sati: 0,
       preostali_dani: 0,
+      boja:"grey"
     };
     this.osvezavanje = this.osvezavanje.bind(this);
   }
@@ -20,8 +21,7 @@ class Olimpijada extends Component {
     let minuti = Math.floor((razlika / (1000 * 60)) % 60);
     let sati = Math.floor((razlika / (1000 * 60 * 60)) % 24);
     let dani = Math.floor(razlika / (1000 * 60 * 60 * 24));
-    console.log(this.props.sada_vreme);
-    this.setState({
+      this.setState({
       preostale_sekunde: sekunde,
       preostale_minute: minuti,
       preostali_sati: sati,
@@ -40,10 +40,12 @@ class Olimpijada extends Component {
   }
 
   render() {
+    let boja={
+    backgroundColor:this.state.boja};
     return (
-      <div>
+      <div style={boja}>
         <h3>
-          <p>Do olimpijade (26 Jul 2024 (Summer)) je ostalo jos: </p>
+          <p>Do olimpijade (26 Jul 2024 (Summer) 20h) je ostalo jos: </p>
         </h3>
         <h2>
           Dana: {this.state.preostali_dani}, Sati: {this.state.preostali_sati},
