@@ -6,16 +6,18 @@ class Vreme extends Component {
   constructor(props) {
     super(props)
     this.state={
-      datum:''
+      trenutno_datum:'',
+      trenutno_milisekunde:'',
     };
 this.osvezanje=this.osvezanje.bind(this);
   }
 
   
   componentDidMount(){
-    let trenutno = new Date();
-    const jsonDate = trenutno.toString()
-    this.setState({datum:jsonDate})
+    let trenutno_datum = new Date();
+    let trenutno_vreme = Date.now();
+    const jsonDate = trenutno_datum.toString()
+    this.setState({trenutno_datum:jsonDate,trenutno_milisekunde:trenutno_vreme})
     setInterval(() => {
       this.osvezanje()
     }, 1000);
@@ -24,16 +26,18 @@ this.osvezanje=this.osvezanje.bind(this);
   }
   osvezanje=()=>{
     let trenutno = new Date();
+    let trenutno_vreme = Date.now();
     const jsonDate = trenutno.toString()
-    this.setState({datum:jsonDate})
+    this.setState({trenutno_datum:jsonDate,trenutno_milisekunde:trenutno_vreme})
+  
   }
 
   
   render() { 
 
     return (<div>
-      <Danas sada={this.state.datum}></Danas>
-      <Olimpijada sada={this.state.datum}></Olimpijada>
+      <Danas sada_datum={this.state.trenutno_datum}></Danas>
+      <Olimpijada sada_vreme={this.state.trenutno_milisekunde}></Olimpijada>
     </div>);
   }
 

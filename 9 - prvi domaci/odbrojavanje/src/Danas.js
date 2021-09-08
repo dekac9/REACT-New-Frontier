@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Danas extends Component {
 
   render() { 
-    return ( <h1>{this.props.trenutno}</h1>);
+    return ( <h1>{this.props.sada_datum}</h1>);
   }
 }
  
