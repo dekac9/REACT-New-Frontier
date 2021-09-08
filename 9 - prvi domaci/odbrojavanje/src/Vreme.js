@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Danas from './Danas';
+import Olimpijada from './Olimpijada';
 
 class Vreme extends Component {
   constructor(props) {
@@ -31,8 +32,8 @@ this.osvezanje=this.osvezanje.bind(this);
   render() { 
 
     return (<div>
-      
-      <Danas trenutno={this.state.datum}></Danas>
+      <Danas sada={this.state.datum}></Danas>
+      <Olimpijada sada={this.state.datum}></Olimpijada>
     </div>);
   }
 
