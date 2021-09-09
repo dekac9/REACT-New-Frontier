@@ -9,7 +9,7 @@ class Vreme extends Component {
     this.state = {
       trenutno_datum: "",
       trenutno_milisekunde: "",
-      grad:''
+      grad:"pocetno"
     };
     this.osvezanje = this.osvezanje.bind(this);
     this.onSubmit=this.onSubmit.bind(this)
