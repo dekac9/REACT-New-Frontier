@@ -7,14 +7,14 @@ class Api extends Component {
       ispis: 0,
     };
     this.pozivApi = this.pozivApi.bind(this);
-    this.osvezi=this.osvezi.bind(this)
+
   }
   
-  osvezi = (a) => {
-    this.setState({ ispis: a });
-  };
-  pozivApi = () => {
-    alert("usaoasd u poziv APIa");
+
+
+  pozivApi(){
+    //let that=this OVO KORISTIS DA UHVATIS STATE U UCAURENOJ FJI KAO STO JE API RESPONSE;
+    alert("usao u poziv APIa");
     let grad = this.props.grad;
     let adresa =
       "https://api.covid19api.com/total/country/" +
@@ -28,24 +28,28 @@ class Api extends Component {
         "x-rapidapi-key": "54844dcf6cmsh4da987bfe9e98aep174d83jsnc0c6a101636f",
       },
     })
-      .then(function (response) {
-        var temp;
+
+      .then((response)=> {
+        let temp=
         response.json().then((data) => {
           temp = data[data.length - 1].Cases;
           console.log(temp)
-          this.osvezi(temp);
+          console.log(this)
+          //that.setState({ispis: temp});
+          this.setState({ispis: temp});
         });
       })
       .catch((err) => {
         console.error(err);
       });
+      
   };
 
   componentDidMount() {
     if (this.props.grad !== "pocetno") {
       this.pozivApi();
     } else {
-      alert("Ukucaj grad da vidis API");
+      alert("Ukucaj zemlju da vidis API");
       //
     }
   }
@@ -60,7 +64,7 @@ class Api extends Component {
   render() {
     return (
       <div>
-        <h6 id="ispis">{this.state.ispis}</h6>
+        <h6 id="ispis">{this.state.ispis} zarazenih</h6>
       </div>
     );
   }

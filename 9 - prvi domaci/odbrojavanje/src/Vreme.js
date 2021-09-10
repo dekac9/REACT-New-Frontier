@@ -51,7 +51,7 @@ onSubmit=()=>{
         <div>
           <input id="grad"
             type="text"
-            placeholder="Unesite ime grada"
+            placeholder="Unesite ime zemlje"
           ></input>
           <button type="submit" onClick={this.onSubmit}>Add</button>
         </div>
