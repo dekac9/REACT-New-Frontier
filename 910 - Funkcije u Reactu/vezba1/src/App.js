@@ -1,25 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState,useEffect} from 'react';
+import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+const api_key = "435c8880fa41fdbe5fba133c47f78d2b";
+const BASE_URL = "https://api.themoviedb.org/3";
+const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
