@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import axios from "axios";
+import "./App.css"
 
 
 const api_key = "435c8880fa41fdbe5fba133c47f78d2b";
@@ -27,10 +28,15 @@ return(
   <div className="App-header">
     <div className="mreza">
 {
-  
+
+  data.map((movie)=>(<div className="item">
+    <img src={getImage(movie.poster_path)} alt={movie.title}/>
+    <p>{movie.title}</p>
+  </div>))
 }      
     </div>
   </div>
 </div>
 )
 }
+export default App
