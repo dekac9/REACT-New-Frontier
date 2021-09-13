@@ -13,11 +13,6 @@ display: flex;
 flex-wrap: wrap;
 
 }
-.item {
-
-
-
-}
 
 
 @media (prefers-reduced-motion: no-preference) {
