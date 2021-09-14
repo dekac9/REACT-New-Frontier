@@ -11,4 +11,6 @@
 !!!!!!!!!!!!!!!!!!!!VRLO VAZNO!!!!!!!!!!!!!!!!!!!!!!!!
 --- najvaznija stvar koju sam naucio je da se arrow fje razlikuju i po tome sto nasledjuju this od roditelja, ako ih koristis u ucaurenim fjama une ce nasledjivati this od svojih parrenta. Ako ne koristis arrow fje, mooras da nasledjujes this sve do ucaurene fje da bi i ona koja je ucaurena znala sta je this. (npr:that=this a posle that.setState({.....})). Tu ni bajndovanje ne pomaze. Sve ovo ima veze kada se radi sa klasama i konstruktorima a ne sa fjama u React-u
 910 - nastavak rada u Reactu, rad sa fjama, primer fetcha sa funkcijama a ne sa stanjima useState, useEffect;
-911 - rutiranje
+911 - rutiranje, React Router
+912 - aRedux (bez Reacta)
+912 - Redux React
