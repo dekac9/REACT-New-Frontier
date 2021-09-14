@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.1/redux.js" integrity="sha512-VSziEhiRlxaN8AZfc5UQiEnrcwM3KOp0GRITlYcQ7BCsEPq/VQMApwoZoh8zL69oo/Of+uVt/nygZbJAMst6jA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <script>
+      function addColor(value) {
+        return { type: "Dodaj", color: value };
+      }
+      function removeColor(value) {
+        return { type: "Izbaci", color: value };
+      }
+
+      function reductor(stanje, akcija) {
+        if(stanje==undefined){
+          stanje=[];
+        };
+        if (akcija.type == "Dodaj") {
+          return state.concate(akcija.color);
+        } else if (akcija.type == "Izbaci") {
+          return stanje.filter((item) => item != akcija.color);
+        } else{
+          return stanje
+        }
+      }
+
+      var skladiste = Redux.createstore(reductor);
+
+      skladiste.dispatch(addColor,("yellow"))
+      skladiste.dispatch(addColor,("blue"))
+      skladiste.dispatch(addColor,("red"))
+      skladiste.dispatch(addColor,("grey"))
+
+
+      console.log(skladiste.getState())
+    </script>
+  </body>
+</html>
