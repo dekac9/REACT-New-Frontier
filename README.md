@@ -1,4 +1,9 @@
 # REACT-ucenje
+#BELESKE#
+- slike uvek u ublic folder
+
+
+
 1 - uvod, state, props, komponente
 2 - prenos svojstava, spread operator, lifecycle, dogadjaji
 3 - slozeniji rad sa komponentama, portal
@@ -14,3 +19,4 @@
 911 - rutiranje, React Router
 912 - aRedux (bez Reacta)
 912 - Redux React (komponenta viseg reda connect metodom)
+913 - Store primenom React Context (ima sledece metode, jedna za dodavanje u korpu, druga za informacije o tom proizvodu pa ce biti u globalnom kontekstu, za izbacivanje iz korpe)
