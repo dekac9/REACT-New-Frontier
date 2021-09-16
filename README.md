@@ -13,4 +13,4 @@
 910 - nastavak rada u Reactu, rad sa fjama, primer fetcha sa funkcijama a ne sa stanjima useState, useEffect;
 911 - rutiranje, React Router
 912 - aRedux (bez Reacta)
-912 - Redux React
+912 - Redux React (komponenta viseg reda connect metodom)
