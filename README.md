@@ -20,3 +20,4 @@
 912 - aRedux (bez Reacta)
 912 - Redux React (komponenta viseg reda connect metodom)
 913 - Store primenom React Context (ima sledece metode, jedna za dodavanje u korpu, druga za informacije o tom proizvodu pa ce biti u globalnom kontekstu, za izbacivanje iz korpe)
+SREAD OPERATO RI OPASNA PRIMENA
