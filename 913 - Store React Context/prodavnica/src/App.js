@@ -11,12 +11,8 @@ class App extends Component {
 <GlobalState>
   <BrowserRouter>
   <Switch>
-    <Route path="/" component={ProductPage} exact>
-
-    </Route>
-    <Route path="/cart" component={Cart}> 
-
-    </Route>
+    <Route path="/" component={ProductPage} exact></Route>
+    <Route path="/cart" component={CartPage} exact></Route>
   </Switch>
   </BrowserRouter>
 </GlobalState>
