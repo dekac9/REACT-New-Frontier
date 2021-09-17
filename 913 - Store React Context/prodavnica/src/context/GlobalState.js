@@ -117,8 +117,30 @@ if (findIndex<0){
     ...updatedCart[findIndex]
   }
   updatedItem.quantity++;
+  updatedCart[findIndex]=updatedItem;
 }
+this.setState({cart:updatedCart})
   }
+
+izbaciIzKorpe = (product)=>{
+    const updatedCart = [...this.state.cart];
+    const findIndex=updatedCart.findIndex((elem)=>elem.id==product.id);
+    const updatedItem=updatedCart[findIndex];
+    updatedItem.quantity--;
+    if(updatedItem.quantity<=0){
+      updatedItem.splice(findIndex,1)
+      }
+    else{
+      
+      updatedCart[findIndex]=updatedItem;
+    }
+    this.setState({cart:updatedCart})
+}
+
+    
+
+
+
   render() { 
     return <div></div>;
   }
