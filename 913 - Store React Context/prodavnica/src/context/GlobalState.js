@@ -142,7 +142,14 @@ izbaciIzKorpe = (product)=>{
 
 
   render() { 
-    return <div></div>;
+    return <ShopContext.Provider value={{
+      products:this.state.products,
+      cart:this.state.cart,
+      addProductToCart:this.dodajUKorpu,
+      removeProduct:this.izbaciIzKorpe
+    }}>
+{this.props.children}
+    </ShopContext.Provider>;
   }
 }
  
