@@ -146,7 +146,7 @@ izbaciIzKorpe = (product)=>{
       products:this.state.products,
       cart:this.state.cart,
       dodaj:this.dodajUKorpu,
-      izbaciIzKorpe:this.izbaciIzKorpe
+      izbaci:this.izbaciIzKorpe
     }}>
 {this.props.children}
     </ShopContext.Provider>;

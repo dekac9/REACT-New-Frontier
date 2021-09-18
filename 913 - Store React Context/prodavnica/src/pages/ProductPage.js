@@ -21,7 +21,8 @@ class ProductPage extends Component {
                   <li key={product.id}>
                     <div>
                       <img src={product.img} alt={product.title}/>
-                      <strong>{product.title}</strong><span classsName="cena"> Cena {product.price}$</span>
+                      
+                      <strong>{product.title}</strong><span className="cena"> Cena {product.price}$</span>
                     </div>
                     <div>
                       <button onClick={()=>context.dodaj(product)}>Dodaj u korpu</button>
