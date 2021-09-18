@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ShopContext from "../context/ShopContext";
-import Navigation from "../components/navigation";
+import Navigation from "../components/Navigation";
 import "./product.css";
 
 class ProductPage extends Component {
@@ -21,7 +21,10 @@ class ProductPage extends Component {
                   <li key={product.id}>
                     <div>
                       <img src={product.img} alt={product.title}/>
-                      <strong>{product.title}</strong> Cena {product.price}$
+                      <strong>{product.title}</strong><span classsName="cena"> Cena {product.price}$</span>
+                    </div>
+                    <div>
+                      <button onClick={()=>context.dodaj(product)}>Dodaj u korpu</button>
                     </div>
                   </li>
                 ))}

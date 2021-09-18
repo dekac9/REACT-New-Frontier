@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ShopContext from './ShopContext';
 
 class GlobalState extends Component {
@@ -101,7 +101,7 @@ class GlobalState extends Component {
         total: 0
       }
     ],
-   cart=[]
+   cart:[]
   };
   
 
@@ -145,8 +145,8 @@ izbaciIzKorpe = (product)=>{
     return <ShopContext.Provider value={{
       products:this.state.products,
       cart:this.state.cart,
-      addProductToCart:this.dodajUKorpu,
-      removeProduct:this.izbaciIzKorpe
+      dodaj:this.dodajUKorpu,
+      izbaciIzKorpe:this.izbaciIzKorpe
     }}>
 {this.props.children}
     </ShopContext.Provider>;

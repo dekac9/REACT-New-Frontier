@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navlink} from "react-router-dom"
+import {NavLink} from "react-router-dom";
 import "./navigation.css"
 
 const Navigation=(props)=>{
@@ -7,10 +7,10 @@ const Navigation=(props)=>{
     <nav>
       <ul>
         <li>
-          <Navlink to="/">Products</Navlink>
+          <NavLink to="/">Products</NavLink>
         </li>
         <li>
-          <Navlink to="/cart">Cart ({props.cartItemsNumber})</Navlink>
+          <NavLink to="/cart">Cart ({props.cartItemsNumber})</NavLink>
         </li>
       </ul>
 
