@@ -112,12 +112,18 @@ console.log(updatedCart)
 const findIndex=updatedCart.findIndex((elem)=>elem.id==product.id)
 if (findIndex<0){
   updatedCart.push({...product,quantity:1})
+    //ako se menja parametar in cart dole, mora i u redu iznad da bude inCart:true
 }else{
   const updatedItem={
     ...updatedCart[findIndex]
   }
   updatedItem.quantity++;
+  let temp =updatedItem.price * updatedItem.quantity
+  updatedItem.total = temp
+  console.log(temp)
+  //updatedItem.inCart = true;
   updatedCart[findIndex]=updatedItem;
+  
 }
 this.setState({cart:updatedCart})
   }
@@ -128,10 +134,12 @@ izbaciIzKorpe = (product)=>{
     const updatedItem=updatedCart[findIndex];
     updatedItem.quantity--;
     if(updatedItem.quantity<=0){
-      updatedItem.splice(findIndex,1)
+      updatedCart.splice(findIndex,1)
       }
     else{
-      
+      let temp =updatedItem.price * updatedItem.quantity
+  updatedItem.total = temp
+  console.log(temp)
       updatedCart[findIndex]=updatedItem;
     }
     this.setState({cart:updatedCart})
@@ -146,7 +154,7 @@ izbaciIzKorpe = (product)=>{
       products:this.state.products,
       cart:this.state.cart,
       dodaj:this.dodajUKorpu,
-      izbaci:this.izbaciIzKorpe
+      izbaci:this.izbaciIzKorpe,
     }}>
 {this.props.children}
     </ShopContext.Provider>;
